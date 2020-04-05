@@ -20,6 +20,7 @@ class TreeNode(object):
 class Solution(object):
 
     def validBST(self, root, small, large):
+        # 递归：结束条件
         if root == None:
             return True
         if small >= root.val or large <= root.val:

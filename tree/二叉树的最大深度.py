@@ -17,7 +17,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-
+        # 递归：先写结束条件
         if root is None:
             return 0
 

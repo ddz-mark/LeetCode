@@ -10,7 +10,7 @@ class Solution(object):
         :type y: int
         :rtype: int
         """
-        return bin(x ^ y).count('1')
+        return bin(x ^ y).count('1')  # ^ 异或
 
 
 if __name__ == '__main__':
