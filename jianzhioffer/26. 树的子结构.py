@@ -2,6 +2,9 @@
 #
 # B是A的子结构， 即 A中有出现和B相同的结构和节点值。
 
+# 思路：先序遍历 + 深度优先遍历
+
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -18,12 +21,25 @@ class Solution(object):
         :rtype: bool
         """
 
-        if B is None:
-            return True
+        if A is None or B is None:
+            return False
 
-        return self.judge(A, B)
+        return self.judge(A, B) or self.isSubStructure(A.left, B) or self.isSubStructure(A.right, B)
 
     def judge(self, A, B):
+        """
+        判断树的节点是否相同
+        :param A:
+        :param B:
+        :return:
+        """
+        # 递归：结束条件
+        if B is None:
+            return True
+        if A is None:
+            return False
 
-        if A.val == B.val:
-            return self.isSubStructure(A.left, B.left)
+        if A.val != B.val:
+            return False
+
+        return self.judge(A.left, B.left) and self.judge(A.right, B.right)
