@@ -15,6 +15,7 @@
 # 输出：false
 # 解释：1 不能在 2 之前弹出。
 
+# 思路：使用辅助栈
 
 class Solution(object):
     def validateStackSequences(self, pushed, popped):
@@ -23,3 +24,10 @@ class Solution(object):
         :type popped: List[int]
         :rtype: bool
         """
+        stack = []
+        while pushed:
+            stack.append(pushed.pop(0))
+            while stack and popped and stack[-1] == popped[0]:
+                stack.pop()
+                popped.pop(0)
+        return False if stack else True
