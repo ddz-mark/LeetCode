@@ -25,7 +25,7 @@ class Solution(object):
         :rtype: int
         """
         # 思路一
-        return bin(n).count('1')
+        # return bin(n).count('1')
 
         # 思路二：
         # conut = 0
@@ -36,7 +36,10 @@ class Solution(object):
         #
         # return conut
 
+        # 思路三：
+        return sum([(n>>i & 1) for i in range(0,32)])
+
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.hammingWeight(1))
+    print(ob.hammingWeight(-1))
