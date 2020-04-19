@@ -16,3 +16,5 @@ class Solution(object):
 if __name__ == '__main__':
     ob = Solution()
     print(ob.hammingDistance(1, 4))
+
+    print(1 ^ 4)

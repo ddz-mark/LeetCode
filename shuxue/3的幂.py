@@ -19,4 +19,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.isPowerOfThree(0))
+    print(ob.isPowerOfThree(9))
