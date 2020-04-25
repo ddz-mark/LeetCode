@@ -22,7 +22,7 @@ class Solution(object):
 
         head = Node(0)
         new_list = head
-        while l1 != None and l2 != None:
+        while l1 is not None and l2 is not None:
             if l1.val > l2.val:
                 head.next = l2
                 l2 = l2.next

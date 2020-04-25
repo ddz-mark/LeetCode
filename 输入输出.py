@@ -39,3 +39,4 @@ if __name__ == '__main__':
 # list 求和 sum函数
 # 对字典先按值升序，再按值降序 dict(sorted(dic.items(), key=lambda kv: (kv[1], -kv[0])))
 # 词频统计 dic = collections.Counter(p)
+# 二维数组转换成一维数组 res = sum(res, [])

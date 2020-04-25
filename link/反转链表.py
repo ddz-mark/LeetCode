@@ -51,16 +51,25 @@ class Solution(object):
             return None
 
         # 将首节点变成最后一个
-        pre = head
-        cur = head.next
-        pre.next = None
+        # pre = head
+        # cur = head.next
+        # pre.next = None
+        #
+        # while cur:
+        #     # pre, cur, cur.next = cur, cur.next, pre # 超出时间限制
+        #     # 第二种解法
+        #     temp = cur.next
+        #     cur.next = pre
+        #     pre = cur
+        #     cur = temp
+        # return pre
 
-        while cur:
-            # pre, cur, cur.next = cur, cur.next, pre # 超出时间限制
-            # 第二种解法
-            temp = cur.next
-            cur.next = pre
-            pre = cur
-            cur = temp
-        return pre
 
+        new_head = None
+        while head:
+            p = head
+            head = head.next
+            p.next = new_head
+            new_head = p
+            # head = head.next
+        return new_head
