@@ -30,6 +30,7 @@ class Solution(object):
 
         currNum = (n - 1) // digit + base
         index = (n - 1) % digit
+        print(currNum, index)
         return str(currNum)[index]
 
 
