@@ -41,7 +41,6 @@ class Solution(object):
         return res - 2 ** 32 if res > 2 ** 31 - 1 else res
 
 
-
 if __name__ == '__main__':
     ob = Solution()
     print(ob.singleNumber([9, 1, 7, 9, 7, 9, 7]))

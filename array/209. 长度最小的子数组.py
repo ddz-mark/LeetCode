@@ -18,3 +18,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # 思路一：双指针 + 滑动窗口
+        res = len(nums) + 1
+        low = total = 0
+        for i, v in enumerate(nums):
+            total += v
+            while total >= s:
+                res = min(res, i - low + 1)
+                total -= nums[low]
+                low += 1
+        return 0 if res == len(nums) + 1 else res
+
+
+if __name__ == '__main__':
+    ob = Solution()
+    print(ob.minSubArrayLen(15, [1, 2, 3, 4, 5]))
