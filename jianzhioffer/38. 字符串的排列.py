@@ -27,7 +27,7 @@ class Solution(object):
                 if c[i] in dic:  # 重复，由此剪枝
                     continue
                 dic.add(c[i])
-                # print(dic)
+                print('set: ', dic)
                 c[i], c[x] = c[x], c[i]
                 dfs(x+1)
                 c[i], c[x] = c[x], c[i]

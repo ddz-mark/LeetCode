@@ -54,4 +54,7 @@ if __name__ == '__main__':
 # print(b)
 # [(1, 3), (2, 4)]
 
+# 对二位数组去重
+# list(set([tuple(t) for t in list1]))
+
 # 9. 生成随机数：random.randint(1, 5)

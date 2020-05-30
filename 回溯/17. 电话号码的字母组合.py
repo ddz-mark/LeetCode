@@ -42,4 +42,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.letterCombinations(""))
+    print(ob.letterCombinations("23"))
