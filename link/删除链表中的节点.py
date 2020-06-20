@@ -45,12 +45,26 @@ if __name__ == '__main__':
     node1 = Node(5)
     node2 = Node(6)
     node3 = Node(7)
+    node4 = Node(8)
     linklist = Solution(0)
     linklist.append(node1)
     linklist.append(node2)
     linklist.append(node3)
+    linklist.append(node4)
 
-    while linklist.head is not None:
+    # 快慢指针获取中位数
+    fast = slow = linklist.head
+    while fast and fast.next:
+        print(slow.val, fast.val)
+        slow = slow.next
+        fast = fast.next.next
+        print('----------')
+    print('slow', slow.val)
+    if fast:
+        slow = slow.next
+    print('slow', slow.val)
+
+    while linklist.head:
 
         print(linklist.head.val)
         linklist.head = linklist.head.next

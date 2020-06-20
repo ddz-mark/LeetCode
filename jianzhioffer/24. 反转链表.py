@@ -27,4 +27,4 @@ class Solution(object):
             pre.next = new_head
             new_head = pre
 
-        return pre
+        return new_head

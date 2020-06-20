@@ -45,7 +45,8 @@ class Solution(object):
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        if fast.next:
+        #  奇数情况取中位数的下位，中位数不需要比较
+        if fast:
             slow = slow.next
 
         # 比较回文链表
