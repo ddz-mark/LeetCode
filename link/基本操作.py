@@ -22,6 +22,14 @@ if __name__ == '__main__':
     node3.next = node4
     node4.next = node5
 
+    node6 = ListNode(6)
+    node7 = ListNode(7)
+    node8 = ListNode(8)
+    node9 = ListNode(9)
+    node6.next = node7
+    node7.next = node8
+    node8.next = node9
+
     # 打印链表
     while node1:
         print(node1.val)

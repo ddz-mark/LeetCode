@@ -45,7 +45,7 @@ def division(nums, start, end):
 
 
 if __name__ == '__main__':
-    nums = [2, 1, 4, 6, 8, 4, 2, 5]
+    nums = [3, 1, 4, 6, 8, 4, 2, 5]
     # maopao(nums)
     quicksort(nums, 0, len(nums)-1)
     print(nums)
