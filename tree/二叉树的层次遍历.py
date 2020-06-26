@@ -26,11 +26,14 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
+
+        # 递归方案
         level, result = 0, list()
         self._levelOrder(level, result, root)
         return result
 
 
+    # 非递归方案
     # def levelOrder(self, root):
     #     """
     #     :type root: TreeNode
@@ -38,17 +41,17 @@ class Solution(object):
     #     """
     #     if root == None:
     #         return []
-    #     layer = [root]
+    #     stack = [root]
     #     res = []
-    #     while len(layer):
+    #     while stack:
     #         this_res = []
     #         next_l = []
-    #         for n in layer:
+    #         for n in stack:
     #             this_res.append(n.val)
     #             if n.left:
     #                 next_l.append(n.left)
     #             if n.right:
     #                 next_l.append(n.right)
     #         res.append(this_res)
-    #         layer = next_l
+    #         stack = next_l
     #     return res
