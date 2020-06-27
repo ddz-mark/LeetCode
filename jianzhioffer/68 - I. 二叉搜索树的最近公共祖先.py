@@ -10,7 +10,7 @@
 #         self.right = None
 
 # 思路：最近公共祖先只满足以下条件之一：
-# 1. p 和 qq 在 rootroot 的子树中，且分列 rootroot 的 异侧（即分别在左、右子树中）；
+# 1. p 和 q 在 root 的子树中，且分列 root 的 异侧（即分别在左、右子树中）；
 # 2. p = root ，且 q 在 root 的左或右子树中；
 # 3. q = root ，且 p 在 root 的左或右子树中；
 
