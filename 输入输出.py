@@ -1,7 +1,15 @@
 import sys
 
-
 if __name__ == '__main__':
+    # 输入为 [1,2,3,4,5]
+    line = eval(sys.stdin.readline().strip())
+    print(line)
+    print(list(line))
+
+    # 输入为[[1,2],[1,3],[2,4]]
+    line = eval(sys.stdin.readline().strip())
+    print(line)
+    print(list(line))
 
     # 当输入是单个整数时：
     #
@@ -19,18 +27,17 @@ if __name__ == '__main__':
     #     a = list(map(int, line.split()))  # 转为整形列表
     #     print(a[0] + a[1])
 
-    # 多行输入
-    n = int(sys.stdin.readline().strip())
-    ans = 0
-    for i in range(n):
-        # 读取每一行
-        line = sys.stdin.readline().strip()
-        # 把每一行的数字分隔后转化成int列表
-        values = list(map(int, line.split()))
-        for v in values:
-            ans += v
-    print(ans)
-
+    # # 多行输入
+    # n = int(sys.stdin.readline().strip())
+    # ans = 0
+    # for i in range(n):
+    #     # 读取每一行
+    #     line = sys.stdin.readline().strip()
+    #     # 把每一行的数字分隔后转化成int列表
+    #     values = list(map(int, line.split()))
+    #     for v in values:
+    #         ans += v
+    # print(ans)
 
 # 工具
 # 1. list的交集，并集
