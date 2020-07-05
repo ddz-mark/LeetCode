@@ -14,7 +14,6 @@
 # 回文字符串是指正反读都是一样的字符串
 
 
-
 class Solution(object):
     def isPalindrome(self, s):
         """

@@ -1,15 +1,17 @@
 import sys
+import collections
 
 if __name__ == '__main__':
+    # print(collections.Counter([1, 1, 2, 3, 4]))
     # 输入为 [1,2,3,4,5]
     line = eval(sys.stdin.readline().strip())
-    print(line)
-    print(list(line))
+    print(line, type(line))
+    print(list(line), type(list(line)))
 
     # 输入为[[1,2],[1,3],[2,4]]
-    line = eval(sys.stdin.readline().strip())
-    print(line)
-    print(list(line))
+    # line = eval(sys.stdin.readline().strip())
+    # print(line)
+    # print(list(line))
 
     # 当输入是单个整数时：
     #

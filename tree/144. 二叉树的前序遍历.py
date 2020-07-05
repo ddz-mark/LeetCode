@@ -27,8 +27,8 @@ class Solution(object):
         #     if root is None:
         #         return None
         #     res.append(root.val)
-        #     decur(root.left, res)
-        #     decur(root.right, res)
+        #     recur(root.left, res)
+        #     recur(root.right, res)
         #
         # res = []
         # recur(root, res)
