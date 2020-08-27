@@ -17,14 +17,15 @@ class ListNode(object):
 class Solution(object):
     # 翻转一个子链表，并且返回新的头与尾
     def reverse(self, head, tail):
-        prev = tail.next
-        p = head
-        while prev != tail:
-            nex = p.next
-            p.next = prev
-            prev = p
-            p = nex
-        return tail, head
+        new_tail = head
+        new_head = None
+        tail = tail.next
+        while head != tail:
+            cur = head
+            head = head.next
+            cur.next = new_head
+            new_head = cur
+        return new_head, new_tail
 
     def reverseKGroup(self, head, k):
         """
