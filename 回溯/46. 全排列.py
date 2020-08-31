@@ -33,13 +33,13 @@ class Solution(object):
             # 递归：先写结束条件
             if x == n - 1:
                 res.append(nums[:])
-            dic = set()
+            # dic = set()
             for i in range(x, n):
 
                 # 去重
-                if nums[i] in dic:
-                    continue
-                dic.add(nums[i])
+                # if nums[i] in dic:
+                #     continue
+                # dic.add(nums[i])
 
                 nums[x], nums[i] = nums[i], nums[x]
                 dfs(x + 1)
