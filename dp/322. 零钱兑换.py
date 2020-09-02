@@ -76,4 +76,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.coinChange([2], 3))
+    print(ob.coinChange([1, 2, 5], 11))
