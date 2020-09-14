@@ -25,18 +25,38 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        if len(s) < 2:
-            return len(s)
 
-        head = tail = 0
+        # 思路一：双指针
+        # if len(s) < 2:
+        #     return len(s)
+        #
+        # head = tail = 0
+        # res = 1
+        # while tail < len(s) - 1:
+        #     tail += 1
+        #     if s[tail] not in s[head:tail]:
+        #         res = max(res, tail - head + 1)
+        #     else:
+        #         while s[tail] in s[head:tail]:
+        #             head += 1
+        # return res
+
+        # 优化思路二：hash，对 while 内容优化
+        n = len(s)
+        if n < 2:
+            return n
+        head, tail = -1, 0
+        dic = {}
         res = 1
-        while tail < len(s) - 1:
+        while tail < n:
+            if s[tail] in dic.keys():
+                head = max(head, dic[s[tail]])
+
+            dic[s[tail]] = tail
+
+            res = max(res, tail - head)
             tail += 1
-            if s[tail] not in s[head:tail]:
-                res = max(res, tail - head + 1)
-            else:
-                while s[tail] in s[head:tail]:
-                    head += 1
+
         return res
 
 

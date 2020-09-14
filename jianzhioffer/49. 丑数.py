@@ -13,21 +13,30 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        # 思路：n-1 个丑数为 M，那么下一个丑数肯定是前面的丑数*（2，3，5）中最小的，
         if n < 1:
             return n
 
         uglyNumberList = [1]
         T2, T3, T5 = 0, 0, 0
-        for i in range(1, n):
-
-            if uglyNumberList[T2] * 2 <= uglyNumberList[i - 1]:
+        for i in range(0, n - 1):
+            newUgly = min(uglyNumberList[T2] * 2, uglyNumberList[T3] * 3, uglyNumberList[T5] * 5)
+            uglyNumberList.append(newUgly)
+            if (newUgly % 2 == 0):
                 T2 += 1
-            if uglyNumberList[T3] * 3 <= uglyNumberList[i - 1]:
+            if (newUgly % 3 == 0):
                 T3 += 1
-            if uglyNumberList[T5] * 5 <= uglyNumberList[i - 1]:
+            if (newUgly % 5 == 0):
                 T5 += 1
-            # print(T2, T3, T5)
-            uglyNumberList.append(min(uglyNumberList[T2] * 2, uglyNumberList[T3] * 3, uglyNumberList[T5] * 5))
+
+            # if uglyNumberList[T2] * 2 <= uglyNumberList[i - 1]:
+            #     T2 += 1
+            # if uglyNumberList[T3] * 3 <= uglyNumberList[i - 1]:
+            #     T3 += 1
+            # if uglyNumberList[T5] * 5 <= uglyNumberList[i - 1]:
+            #     T5 += 1
+            # # print(T2, T3, T5)
+            # uglyNumberList.append(min(uglyNumberList[T2] * 2, uglyNumberList[T3] * 3, uglyNumberList[T5] * 5))
 
         return uglyNumberList[-1]
 
