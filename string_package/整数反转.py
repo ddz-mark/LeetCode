@@ -24,15 +24,22 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        num = 0
-        if x >= 0:
-            num = int(str(x)[::-1])
-        else:
-            num = -int(str(-x)[::-1])
+        # num = 0
+        # if x >= 0:
+        #     num = int(str(x)[::-1])
+        # else:
+        #     num = -int(str(-x)[::-1])
+        #
+        # return num if num >= -(2**31) and num <= 2**31-1 else 0
 
-        return num if num >= -(2**31) and num <= 2**31-1 else 0
+        # 整数反转
+        y = 0
+        while x > y:
+            y = x % 10 + y * 10
+            x = x // 10
+        return x == y or x == (y // 10)
 
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.reverse(12))
+    print(ob.reverse(1221))
