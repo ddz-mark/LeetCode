@@ -38,7 +38,7 @@ class Solution(object):
                 status = status ^ (1 << dic[v])
 
             if pos[status] == -1:
-                pos[status] = i + 1  # 注意是 i+1
+                pos[status] = i + 1  # 注意是 i+1，第一个字是辅音字母出现问题
             else:
                 res = max(res, i + 1 - pos[status])
 
