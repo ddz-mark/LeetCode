@@ -14,12 +14,18 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        sum = dict()
-        sum[0], sum[1] = 0, 1
-        for i in range(2, n+1):
-            sum[i] = sum[i-1] + sum[i-2]
+        # sum = dict()
+        # sum[0], sum[1] = 0, 1
+        # for i in range(2, n+1):
+        #     sum[i] = sum[i-1] + sum[i-2]
+        #
+        # return sum[n] % 1000000007 if sum[n] > 1000000007 else sum[n]
 
-        return sum[n] % 1000000007 if sum[n] > 1000000007 else sum[n]
+        a, b = 0, 1
+        for _ in range(n):
+            a, b = b, a+b
+        return a % 1000000007
+
 
 
 if __name__ == '__main__':

@@ -30,7 +30,7 @@ class Solution(object):
         if len(strs) == 1:
             return strs[0]
 
-        # 思路一：
+        # 思路一：通过对字符串使用 min，max。比较最大值与最小值是否一致，如果一致，则中间的一定一致。
         a = min(strs)
         b = max(strs)
 

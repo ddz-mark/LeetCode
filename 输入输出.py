@@ -42,8 +42,9 @@ if __name__ == '__main__':
     # print(ans)
 
 # 工具
-# 1. list的交集，并集
+# 1. list的交集，并集，
 # list(set(listA[i + 1:]).intersection(set(listB[:listB.index(listA[i])]))))
+# 差集：list(set(b).difference(set(a))) # b中有a中没有的
 
 # 2. 向下取整、幂函数： math.floor(x / (math.pow(k, i)))
 
@@ -65,5 +66,6 @@ if __name__ == '__main__':
 
 # 对二位数组去重
 # list(set([tuple(t) for t in list1]))
+# 创建二维数组：num_list = [ [0] * 5 for i in range(2)]
 
 # 9. 生成随机数：random.randint(1, 5)
