@@ -16,16 +16,15 @@ class Solution(object):
         return ressum
 
     def judge(self, m, n, i, j, mask, k):
-        count = 0
         if (0 <= i < m and 0 <= j < n and mask[i][j] == False
-            and (self.calbitsum(i) + self.calbitsum(j)) <= k):
+                and (self.calbitsum(i) + self.calbitsum(j)) <= k):
             mask[i][j] = True
-            count = 1 + self.judge(m, n, i - 1, j, mask, k) + \
-                    self.judge(m, n, i + 1, j, mask, k) + \
-                    self.judge(m, n, i, j - 1, mask, k) + \
-                    self.judge(m, n, i, j + 1, mask, k)
-
-        return count
+            return 1 + self.judge(m, n, i - 1, j, mask, k) + \
+                   self.judge(m, n, i + 1, j, mask, k) + \
+                   self.judge(m, n, i, j - 1, mask, k) + \
+                   self.judge(m, n, i, j + 1, mask, k)
+        else:
+            return 0
 
     def movingCount(self, m, n, k):
         """
@@ -43,4 +42,3 @@ class Solution(object):
 if __name__ == '__main__':
     ob = Solution()
     print(ob.movingCount(2, 3, 1))
-
