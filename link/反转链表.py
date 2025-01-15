@@ -50,18 +50,14 @@ class Solution(object):
         if head is None:
             return None
 
-        # 将首节点变成最后一个
-        # pre = head
-        # cur = head.next
-        # pre.next = None
-        #
+        # 思路：cur为当前节点,pre为None节点
+        # cur, pre = head, None
         # while cur:
-        #     # pre, cur, cur.next = cur, cur.next, pre # 超出时间限制
-        #     # 第二种解法
-        #     temp = cur.next
+        #     tmp = cur.next
         #     cur.next = pre
+        #     # 转移到下一阶段
         #     pre = cur
-        #     cur = temp
+        #     cur = tmp
         # return pre
 
 

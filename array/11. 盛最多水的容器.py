@@ -3,6 +3,7 @@
 # @Author : ddz
 
 # 思路：双指针，
+# 移动短边：如果移动长边，短边值固定，而长度缩小，面积只会越来越小
 
 class Solution(object):
     def maxArea(self, height):

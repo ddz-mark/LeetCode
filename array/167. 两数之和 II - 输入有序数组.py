@@ -24,14 +24,26 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        dic = {}
-        for i, v in enumerate(numbers):
-            dic[v] = i
+        # dic = {}
+        # for i, v in enumerate(numbers):
+        #     dic[v] = i
 
-        for i, v in enumerate(numbers):
-            j = dic.get(target - v)
-            if j and i != j:
-                return [i + 1, j + 1]
+        # for i, v in enumerate(numbers):
+        #     j = dic.get(target - v)
+        #     if j and i != j:
+        #         return [i + 1, j + 1]
+        
+        # 双指针法：
+        low, high = 0, len(numbers)-1
+        while low < high:
+            total = numbers[low] + numbers[high]
+            if target == total:
+                return [low+1, high+1]
+            elif target < total:
+                high -= 1
+            elif target > total:
+                low += 1
+        return [-1, -1]
 
 
 if __name__ == '__main__':

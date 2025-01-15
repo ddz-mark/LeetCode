@@ -76,9 +76,11 @@ def heap_sort(elems):
         elems[i] = e  # 如果e已经是某个子树3者中最小的元素，则将其赋给这个子树的父结点
         # 或者位置i已经更新到叶结点位置，则将e赋给这个叶结点。
 
+    # 从最后一个非叶子结点开始，构造大/小根堆
     end = len(elems)
     for i in range(end // 2 - 1, -1, -1):  # 构造堆序。
         siftdown(elems, elems[i], i, end)
+    # 进行交换排序
     for i in range((end - 1), 0, -1):  # 进行堆排序.i最后一个值为1，不需要到0
         print(elems)
         e = elems[i]  # 将末尾元素赋给e
@@ -119,14 +121,16 @@ def quicksort(nums, start, end):
 def division(nums, start, end):
     base = nums[start]
     while start < end:
+        # 比右边小
         while base <= nums[end] and start < end:
             end -= 1
         nums[start] = nums[end]
-
+        # 比左边大
         while base >= nums[start] and start < end:
             start += 1
         nums[end] = nums[start]
-
+    
+    # 最后base赋值
     nums[start] = base
 
     return start

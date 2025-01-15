@@ -35,15 +35,16 @@ class Solution(object):
         # return res
 
         # 思路二：非递归算法
-        if root == []:
-            return []
-        stack, res = [root], []
-        while stack:
-            node = stack.pop()
-            if node:
-                if node.left:
-                    stack.append(node.left)
-                if node.right:
-                    stack.append(node.right)
-                res.append(node.val)
-        return res[::-1]
+        # 迭代解法: 跟前序（根左右）是相反的，（根右左），最后再倒序就是（左右根）
+        res = []
+        stack = []
+        cur = root
+        while stack or cur:
+            if cur:
+                res.append(cur.val)
+                stack.append(cur.left)
+                cur = cur.right
+            else:
+                cur = stack.pop()
+
+        return res[::-1]   

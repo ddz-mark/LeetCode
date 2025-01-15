@@ -37,14 +37,14 @@ class Solution(object):
         # 思路二：非递归算法
         if root == []:
             return []
-        stack, res = [root], []
-        while stack:
-            node = stack.pop()
-            if node:
-                res.append(node.val)
-                # 这里必须是右子树先入栈
-                if node.right:
-                    stack.append(node.right)
-                if node.left:
-                    stack.append(node.left)
+        res = []
+        stack = []
+        cur = root
+        while stack or cur:
+            if cur:
+                res.append(cur.val)
+                stack.append(cur.right)
+                cur = cur.left
+            else:
+                cur = stack.pop()
         return res
