@@ -15,3 +15,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: TreeNode
         """
+        def recur(left, right):
+            if left > right:
+                return None
+
+            # 选择中间位置
+            mid = (left + right) // 2
+
+            node = TreeNode(nums[mid])
+            node.left = recur(left, mid-1)
+            node.right = recur(mid+1, right)
+            return node
+        return recur(0, len(nums)-1)

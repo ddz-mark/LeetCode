@@ -40,7 +40,7 @@ class Solution(object):
         if head is None:
             return True
 
-        # 快慢指针获取中位数
+        # 快慢指针获取中位
         fast = slow = head
         while fast and fast.next:
             slow = slow.next

@@ -19,19 +19,31 @@ class Solution(object):
         :rtype: List[List[int]]
         """
 
+        # res = []
+
+        # def dfs(combination, k, candidates):
+        #     # 递归：先写判断条件
+        #     if len(combination) == k:
+        #         res.append(combination[:])
+        #         return
+        #     else:
+        #         for v in candidates:
+        #             dfs(combination + [v], k, candidates[candidates.index(v) + 1:])
+
+        # for i in range(len(nums) + 1):
+        #     dfs([], i, nums)
+        # return res
+        
+        # 回溯法：
         res = []
 
-        def dfs(combination, k, candidates):
-            # 递归：先写判断条件
-            if len(combination) == k:
-                res.append(combination[:])
-                return
-            else:
-                for v in candidates:
-                    dfs(combination + [v], k, candidates[candidates.index(v) + 1:])
-
-        for i in range(len(nums) + 1):
-            dfs([], i, nums)
+        def recur(index, tmp):
+            # 结束条件
+            res.append(tmp)
+            for i in range(index, len(nums)):
+                recur(i+1,tmp + [nums[i]])
+        
+        recur(0, [])
         return res
 
 

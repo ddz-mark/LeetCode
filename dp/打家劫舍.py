@@ -35,7 +35,7 @@ class Solution(object):
             choice1 = memo[i - 1]
             choice2 = memo[i - 2] + nums[i]
             memo[i] = max(choice1, choice2)
-
+        print(memo)
         return memo[len(nums) - 1]
 
 
