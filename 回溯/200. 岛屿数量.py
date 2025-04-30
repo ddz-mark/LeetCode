@@ -35,6 +35,7 @@ class Solution(object):
         :type grid: List[List[str]]
         :rtype: int
         """
+        # 思路：DFS，读取每行每列，然后将相连的部分置为0，判断有1的+1即可
         if len(grid) == 0:
             return 0
 

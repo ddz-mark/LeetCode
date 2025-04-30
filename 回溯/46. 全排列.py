@@ -35,7 +35,6 @@ class Solution(object):
                 res.append(nums[:])
             dic = set()
             for i in range(x, n):
-
                 # 去重
                 if nums[i] in dic:
                     continue

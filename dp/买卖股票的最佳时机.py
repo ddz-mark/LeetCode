@@ -27,6 +27,8 @@ class Solution(object):
         if len(prices) == 0:
             return 0
 
+        # 思路：运用动态规划思想，对于每一项，只需要关注它之前的最小数和它之间的差值
+
         min_v = prices[0]
         max_v = 0
         for i, v in enumerate(prices):

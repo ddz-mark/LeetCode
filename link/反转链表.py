@@ -50,7 +50,7 @@ class Solution(object):
         if head is None:
             return None
 
-        # 思路：cur为当前节点,pre为None节点
+        # 思路：cur为当前节点,pre为None节点。保留cur的next指针，cur的next指针设置为pre； pre, cur 分别重新赋值.
         # cur, pre = head, None
         # while cur:
         #     tmp = cur.next
@@ -60,12 +60,10 @@ class Solution(object):
         #     cur = tmp
         # return pre
 
-
         new_head = None
         while head:
-            p = head
+            cur = head
             head = head.next
-            p.next = new_head
-            new_head = p
-            # head = head.next
+            cur.next = new_head
+            new_head = cur
         return new_head

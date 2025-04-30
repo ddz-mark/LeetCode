@@ -24,38 +24,39 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         # 思路：排序 + 双指针，可以看出，一般数组的连续问题，大部分都用双指针解决。
-
         res = []
-
+        # 数组排序
         nums = sorted(nums)
         n = len(nums)
 
         for i in range(n):
-
+            # 比 0 大的情况直接返回
             if nums[i] > 0:
                 return res
-
+            # 相同数字的情况就跳过
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
+            # 双指针
             left = i + 1
             right = n - 1
-
             while left < right:
-
+                # 判断正好等于0
                 if (nums[left] + nums[i] + nums[right]) == 0:
                     res.append([nums[i], nums[left], nums[right]])
-                    # print(res)
-
+                    # 如果右边重复，往左移
                     while left < right and nums[right - 1] == nums[right]:
                         right -= 1
+                    # 如果左边重复，往右移
                     while left < right and nums[left] == nums[left + 1]:
                         left += 1
-
+                    # 往中间移动
                     left += 1
                     right -= 1
+                # 大于 0 的时候，右边往左移
                 elif (nums[left] + nums[i] + nums[right]) > 0:
                     right -= 1
+                # 小于0的时候，左边往右移
                 else:
                     left += 1
 

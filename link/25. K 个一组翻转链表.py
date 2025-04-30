@@ -33,6 +33,8 @@ class Solution(object):
         :type k: int
         :rtype: ListNode
         """
+        # 思路：1. 先分组，每K个一组. 2. 翻转组内链表，并保存新的头尾指针 3. 再把子链表重新接回原链表
+
         # 增加头指针，可以防止单独处理
         hair = ListNode(0)
         hair.next = head
