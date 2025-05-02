@@ -29,11 +29,15 @@ class Solution(object):
         # 思路：通过 s 判断是否进行进位，循环
         dummy = p = ListNode(None)
         s = 0
+        # 这里的s是防止最后一位
         while l1 or l2 or s:
-            s += (l1.val if l1 else 0) + (l2.val if l2 else 0)
+            s = s + (l1.val if l1 else 0) + (l2.val if l2 else 0)
             p.next = ListNode(s % 10)
             p = p.next
-            s //= 10
+            # 进位
+            s = s // 10
+
+            # 遍历
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return dummy.next
