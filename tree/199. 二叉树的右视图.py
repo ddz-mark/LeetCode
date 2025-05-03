@@ -27,7 +27,7 @@ class Solution:
                 # 维护二叉树的最大深度
                 max_depth = max(max_depth, depth)
 
-                # 如果不存在对应深度的节点我们才插入
+                # 如果不存在对应深度的节点我们才插入，setdefault存在depth的时候，返回这个depth对应值，不存在设置node.val并返回
                 rightmost_value_at_depth.setdefault(depth, node.val)
 
                 stack.append((node.left, depth + 1))
