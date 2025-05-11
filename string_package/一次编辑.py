@@ -28,10 +28,11 @@ class Solution(object):
             if s1[i] == s2[i]:
                 continue
             else:
+                # 分别代表替换、删除、添加一个字符情况
                 return s1[i + 1:] == s2[i + 1:] or s1[i + 1:] == s2[i:] or s1[i:] == s2[i + 1:]
         return True
 
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.test("pale", "ple1"))
+    print(ob.test("pale", "pele"))
