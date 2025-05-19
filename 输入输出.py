@@ -1,45 +1,45 @@
 import sys
 import collections
 
-if __name__ == '__main__':
-    # print(collections.Counter([1, 1, 2, 3, 4]))
-    # 输入为 [1,2,3,4,5]
-    line = eval(sys.stdin.readline().strip())
-    print(line, type(line))
-    print(list(line), type(list(line)))
+# if __name__ == '__main__':
+# print(collections.Counter([1, 1, 2, 3, 4]))
+# 输入为 [1,2,3,4,5]
+# line = eval(sys.stdin.readline().strip())
+# print(line, type(line))
+# print(list(line), type(list(line)))
 
-    # 输入为[[1,2],[1,3],[2,4]]
-    # line = eval(sys.stdin.readline().strip())
-    # print(line)
-    # print(list(line))
+# 输入为[[1,2],[1,3],[2,4]]
+# line = eval(sys.stdin.readline().strip())
+# print(line)
+# print(list(line))
 
-    # 当输入是单个整数时：
-    #
-    # n = int(input())
-    # 1
-    # 当输入的一行有多个整数时，使用split函数将不同的整数分开，将其转为整形，再转为list列表
-    #
-    # a = list(map(int, input().split()))
+# 当输入是单个整数时：
+#
+# n = int(input())
+# 1
+# 当输入的一行有多个整数时，使用split函数将不同的整数分开，将其转为整形，再转为list列表
+#
+# a = list(map(int, input().split()))
 
-    # 当持续有输入且不知道有多少行时，不指定行数， 但是每输入一行就处理一行，持续等待输入
-    # import sys
-    #
-    # for line in sys.stdin:
-    #     # a = line.split()
-    #     a = list(map(int, line.split()))  # 转为整形列表
-    #     print(a[0] + a[1])
+# 当持续有输入且不知道有多少行时，不指定行数， 但是每输入一行就处理一行，持续等待输入
+# import sys
+#
+# for line in sys.stdin:
+#     # a = line.split()
+#     a = list(map(int, line.split()))  # 转为整形列表
+#     print(a[0] + a[1])
 
-    # # 多行输入
-    # n = int(sys.stdin.readline().strip())
-    # ans = 0
-    # for i in range(n):
-    #     # 读取每一行
-    #     line = sys.stdin.readline().strip()
-    #     # 把每一行的数字分隔后转化成int列表
-    #     values = list(map(int, line.split()))
-    #     for v in values:
-    #         ans += v
-    # print(ans)
+# # 多行输入
+# n = int(sys.stdin.readline().strip())
+# ans = 0
+# for i in range(n):
+#     # 读取每一行
+#     line = sys.stdin.readline().strip()
+#     # 把每一行的数字分隔后转化成int列表
+#     values = list(map(int, line.split()))
+#     for v in values:
+#         ans += v
+# print(ans)
 
 # 工具
 # 1. list的交集，并集，
@@ -69,3 +69,21 @@ if __name__ == '__main__':
 # 创建二维数组：num_list = [ [0] * 5 for i in range(2)]
 
 # 9. 生成随机数：random.randint(1, 5)
+
+
+import torch
+
+input = torch.tensor([[[1, 1, 1], [2, 2, 2]],
+                      [[3, 3, 3], [4, 4, 5]],
+                      [[5, 5, 5], [6, 6, 6]]])
+print(input.shape, input.dim())
+
+import torch
+
+input = torch.tensor([[[1, 1, 1], [2, 2, 2]],
+                     [[3, 3, 3], [4, 4, 5]],
+                     [[5, 5, 5], [6, 6, 6]]])
+
+output = input[0:2, 0:1, 0:3]
+print(output)  # 输出: tensor([[[5, 5, 5]]])
+print(output.shape)  # 输出: torch.Size([1, 1, 3])

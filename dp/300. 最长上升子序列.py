@@ -19,7 +19,7 @@ class Solution(object):
         """
 
         # 思路一：动态规划
-        # dp[i] 是前 i 个元素的最长上升子序列
+        # dp[i] 是前 i 个元素的最长上升子序列的长度
         # 递推公式是：dp[i] = max(dp[0],dp[1]...dp[j]...dp[i-1]) + 1，并且 nums[j] < nums[i]
         # 最后 max(dp[i])
         if nums == []:

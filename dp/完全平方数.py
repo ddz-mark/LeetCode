@@ -27,7 +27,8 @@ class Solution:
         # dp[i]：最少需要多少个数的平方来表示整数 i
         # 这些数必然是落在[1, sqrt(i)]，枚举这些数j，
         # 递推公式：dp[i] = min(dp[i], dp[i - j*j] + 1)
-        
+
+        # 初始化为1的倍数
         dp = [i for i in range(n+1)]
         for i in range(1, n+1):
             # 遍历所有小于等于 i 的完全平方数

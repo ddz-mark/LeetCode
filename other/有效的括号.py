@@ -23,6 +23,7 @@ class Solution(object):
             if i in d:
                 stack.append(i)
             else:
+                # 判断是否匹配，如果没有或者不匹配，则代表失败
                 if not stack or d[stack.pop()] != i:
                     return False
         return stack == []

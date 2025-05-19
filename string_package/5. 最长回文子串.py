@@ -44,6 +44,7 @@ class Solution(object):
                 else:
                     dp[i][j] = (dp[i + 1][j - 1]) and (s[i] == s[j])
 
+                # 如果长度超过当前最大，则更新
                 if dp[i][j] and length + 1 > len(res):
                     res = s[i:j + 1]
         return res
