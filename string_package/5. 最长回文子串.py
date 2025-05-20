@@ -14,22 +14,21 @@
 # 输入: "cbbd"
 # 输出: "bb"
 
-# 思路：用 dp[j][i] 字符串从位置 j 到位置 i(闭区间)是否为回文子串.
-# 动态规划状态转移方程：P（i,j）=P(i+1,j-1) ^ (Si == Sj)
-
 class Solution(object):
     def longestPalindrome(self, s):
         """
         :type s: str
         :rtype: str
         """
+        # 思路：用 dp[i][j] 字符串从位置 i 到位置 j(闭区间)是否为回文子串.
+        # 动态规划状态转移方程：P（i,j）=P(i+1,j-1) ^ (Si == Sj)
         n = len(s)
         dp = [[False] * n for _ in range(n)]
         res = ""
 
-        # 遍历子串长度
+        # 外循环：遍历子串长度
         for length in range(n):
-
+            # 内循环：
             for i in range(n):
                 j = i + length  # 子串结束点
                 if j >= n:
