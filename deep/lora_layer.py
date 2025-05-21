@@ -23,6 +23,6 @@ class LoRALayer(nn.Module):
         # 原始输出 + LoRA 调整
         original_out = self.original(x)  # Wx
         # 矩阵乘法
-        lora_weights = torch.matmul(self.lora_B, self.lora_A)
+        lora_weights = torch.matmul(self.B, self.A)
         lora_out = torch.matmul(x, lora_weights.T)
         return original_out + lora_out * self.scaling
