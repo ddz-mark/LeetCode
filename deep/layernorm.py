@@ -26,6 +26,31 @@ class LayerNormalization(nn.Module):
         return out
 
 
+class RMSNorm(nn.Module):
+    def __init__(self, dim: int, eps: float = 1e-6):
+        super().__init__()
+        self.eps = eps
+        # 可学习参数：缩放 (gamma)，无偏置
+        self.gamma = nn.Parameter(torch.ones(dim))  # shape: [dim]
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+            x: 输入张量，shape 为 [batch_size, seq_len, dim] 或 [batch_size, dim]
+        Returns:
+            归一化后的张量，shape 与输入相同
+        """
+        # 计算均方根 (RMS)，不减去均值
+        rms = torch.sqrt(
+            x.pow(2).mean(dim=-1, keepdim=True) + self.eps)  # shape: [batch_size, seq_len, 1] 或 [batch_size, 1]
+
+        # 归一化：除 RMS
+        x_normalized = x / rms  # shape 同输入
+
+        # 缩放（无偏置）
+        return self.gamma * x_normalized  # shape 同输入
+
+
 if __name__ == "__main__":
     tensor_input = torch.rand(5, 10, 8)
     model = LayerNormalization(8)
