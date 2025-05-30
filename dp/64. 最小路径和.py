@@ -41,6 +41,7 @@ class Solution(object):
         # return dfs(0, 0)
 
         # 动态规划：思路跟三角形最小路径和一样，通过空间换时间
+        # 递推公式：从下往上走，grid[i][j] = min(grid[i + 1][j], grid[i][j + 1])
         rows, cols = len(grid), len(grid[0])
         for i in range(rows - 1, -1, -1):
             for j in range(cols - 1, -1, -1):

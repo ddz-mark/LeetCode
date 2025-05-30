@@ -37,12 +37,14 @@ class Solution(object):
         #
         # return res
 
-        # 思路二：栈
+        # 思路二：单调栈，从右到左遍历，单调栈的特性：存储index
         ans = [0] * len(T)
         stack = []  # indexes from hottest to coldest
         for i in range(len(T) - 1, -1, -1):
+            # 比较当前值是否比栈的值大，如果大，则出栈，如果出栈到比当前值大，则代表最近的一次温度升高，则下标相减即可
             while stack and T[i] >= T[stack[-1]]:
                 stack.pop()
+            # 下标相减
             if stack:
                 ans[i] = stack[-1] - i
             stack.append(i)

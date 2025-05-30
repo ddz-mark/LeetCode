@@ -33,6 +33,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
 
+        # 思路：每个元素只能使用1次的话，candidates得更新
         res = []
 
         def dfs(combination, target, candidates):

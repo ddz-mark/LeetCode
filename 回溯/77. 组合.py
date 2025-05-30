@@ -38,6 +38,7 @@ class Solution(object):
             for i in range(first, n+1):
                 curr.append(i)
                 dfs(i+1, curr)
+                # 默认移除最后一个元素
                 curr.pop()
 
         dfs(1)
