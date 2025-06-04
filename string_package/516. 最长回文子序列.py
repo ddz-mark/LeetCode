@@ -19,10 +19,11 @@
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
         # 思路：dp[i][j]代表字符串i到j 是回文序列的长度
-        # 递推公式：dp[i][j] = dp[i + 1][j - 1] + 2 if s[i] == s[j
-        #         dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])
+        # 递推公式：dp[i][j] = dp[i + 1][j - 1] + 2 if s[i] == s[j]，相等的话，长度+2
+        #         dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])，不相等的话，判断最大值
         n = len(s)
         dp = [[0] * n for _ in range(n)]
+        # 倒序：先处理末尾的子串，并逐步向左扩展处理更长的子串
         for i in range(n - 1, -1, -1):
             dp[i][i] = 1
             for j in range(i + 1, n):

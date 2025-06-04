@@ -13,9 +13,9 @@
 
 # Definition for singly-linked list.
 class ListNode(object):
-    def __init__(self, x):
+    def __init__(self, x, next=None):
         self.val = x
-        self.next = None
+        self.next = next
 
 
 class Solution(object):
@@ -24,8 +24,8 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        dummy = c = ListNode(None)
-        dummy.next = head
+        dummy = c = ListNode(0, head)
+        # dummy.next = head
         while c.next and c.next.next:
             a, b = c.next, c.next.next
             c.next, a.next = b, b.next
