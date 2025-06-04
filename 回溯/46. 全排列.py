@@ -36,9 +36,9 @@ class Solution(object):
             dic = set()
             for i in range(x, n):
                 # 去重
-                if nums[i] in dic:
-                    continue
-                dic.add(nums[i])
+                # if nums[i] in dic:
+                #     continue
+                # dic.add(nums[i])
 
                 nums[x], nums[i] = nums[i], nums[x]
                 dfs(x + 1)
@@ -51,4 +51,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     ob = Solution()
-    print(ob.permute([1, 2, 2]))
+    print(ob.permute([1, 2, 3]))

@@ -33,7 +33,7 @@ class Solution(object):
         # for i in range(len(nums) + 1):
         #     dfs([], i, nums)
         # return res
-        
+
         # 回溯法：
         res = []
 
@@ -41,8 +41,9 @@ class Solution(object):
             # 结束条件
             res.append(tmp)
             for i in range(index, len(nums)):
-                recur(i+1,tmp + [nums[i]])
-        
+                #
+                recur(i + 1, tmp + [nums[i]])
+
         recur(0, [])
         return res
 

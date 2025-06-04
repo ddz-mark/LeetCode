@@ -1,4 +1,3 @@
-
 # 给定一个 n × n 的二维矩阵表示一个图像。
 #
 # 将图像顺时针旋转 90 度。
@@ -27,7 +26,8 @@ class Solution:
 
         print(matrix)
 
+
 if __name__ == '__main__':
     ob = Solution()
-    matrix = [[1,2],[3,4],[5,6]]
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     ob.rotate(matrix)
